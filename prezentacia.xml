@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--java -jar "C:\DocBook\saxon\saxon.jar" -o out.html projekty.xml stylesheet.xsl-->
+<prezentacia 
+  xmlns="file:/D:/Users/MatusPilnan/Desktop/Skola/6.semester/dalsieWpub"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="file:/D:/Users/MatusPilnan/Desktop/Skola/6.semester/dalsieWpub schema.xsd">
+  <info xmlns="">
+    <nazov>Tvorba prezentácie v XML</nazov>
+    <podnadpis>Neviem o tom prakticky nič ale to mi nebráni spraviť o tom prezentáciu 😉</podnadpis>
+    <autor>Matúš Pilňan</autor>
+  </info>
+  <slajd xmlns="" nadpis="Úvod">
+    <text>
+      Dostali sme za úlohu spraviť prezentáciu s pomocou XML a XSLT. Na validáciu XML sme mohli použiť DTD, XML Schema alebo niečo čoho meno si nepamätám.
+      Rozhodol som sa použiť XSD lebo tie zvyšné dve sa javia ako dosť hnoj...
+    </text>
+  </slajd>
+  <slajd xmlns="" nadpis="Čo treba spraviť?">
+    <zoznam cislovany="false">
+      <polozka-zoznamu>Ukážková prezentácia (XML)</polozka-zoznamu>
+      <polozka-zoznamu>Opis štruktúry (XSD)</polozka-zoznamu>
+      <polozka-zoznamu>Transformácia do XHTML (XSLT)</polozka-zoznamu>
+      <polozka-zoznamu>Transformácia do FO a PDF (XSLT)</polozka-zoznamu>
+    </zoznam>
+  </slajd>
+  <slajd xmlns="" nadpis="Aj obrázok by som dal...">
+    <obrazok zdroj="D:/Users/MatusPilnan/Pictures/89593.png">...takže tu je Danko Dangl.</obrazok>
+  </slajd>
+  <slajd xmlns="" nadpis="A vlastne ešte zoradený zoznam">
+    <zoznam cislovany="true">
+      <polozka-zoznamu>Prvý prvok</polozka-zoznamu>
+      <polozka-zoznamu>Druhá položka</polozka-zoznamu>
+      <polozka-zoznamu>Štvrtá položka</polozka-zoznamu>
+      <polozka-zoznamu>To sú ale šprímy čo 😂😂😂</polozka-zoznamu>
+    </zoznam>
+  </slajd>
+</prezentacia>

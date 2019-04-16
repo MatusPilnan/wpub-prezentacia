@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="file:/D:/Users/MatusPilnan/Desktop/Skola/6.semester/dalsieWpub"
+  xmlns="file:/D:/Users/MatusPilnan/Desktop/Skola/6.semester/dalsieWpub">
+  <xs:element name="prezentacia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="info">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="nazov" type="xs:string" minOccurs="1"/>
+              <xs:element name="podnadpis" type="xs:string" minOccurs="0"/>
+              <xs:element name="autor" type="xs:string" minOccurs="0"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="slajd" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="text" type="xs:string" />
+              <xs:element name="obrazok">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="zdroj" use="required" type="xs:anyURI"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="zoznam">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="polozka-zoznamu" maxOccurs="unbounded" type="xs:string" />
+                  </xs:sequence>
+                  <xs:attribute name="cislovany" type="xs:boolean" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+            <xs:attribute name="nadpis" />
+          </xs:complexType>
+        </xs:element>  
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
