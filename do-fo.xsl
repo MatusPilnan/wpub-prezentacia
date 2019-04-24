@@ -9,10 +9,12 @@
         <fo:simple-page-master master-name="slajd" size="33.867cm 19.05cm">
           <fo:region-body margin="1.4in"/>
           <fo:region-before extent="1in" padding="0.4in 1.5in 0.4in" display-align="before"/>
+          <fo:region-after extent="1in" padding="0.4in 1.5in 0.4in" display-align="after"/>
         </fo:simple-page-master>
       </fo:layout-master-set>
       <xsl:apply-templates select="//info" />
       <xsl:apply-templates select="//slajd" />
+
     </fo:root>
   </xsl:template>
 
@@ -41,8 +43,19 @@
           <xsl:value-of select="@nadpis"/>
         </fo:block>
       </fo:static-content>
+      <fo:static-content flow-name="xsl-region-after" font="italic 14pt Verdana" color="grey">
+        <fo:block text-align="end">
+          <xsl:text>Slajd </xsl:text>
+          <fo:page-number />
+          <xsl:text>/</xsl:text>
+          <fo:page-number-citation ref-id="posledny-slajd"/>
+        </fo:block>
+      </fo:static-content>
       <fo:flow flow-name="xsl-region-body" font="24pt Verdana">
         <xsl:apply-templates select="child::*" />
+        <xsl:if test="position() = last()">
+          <fo:block id="posledny-slajd" />
+        </xsl:if>
       </fo:flow>
     </fo:page-sequence>
   </xsl:template>
