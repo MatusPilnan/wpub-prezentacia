@@ -37,7 +37,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:choice>
-            <xs:attribute name="nadpis" />
+            <xs:attribute name="nadpis" type="xs:string"/>
           </xs:complexType>
         </xs:element>  
       </xs:sequence>
