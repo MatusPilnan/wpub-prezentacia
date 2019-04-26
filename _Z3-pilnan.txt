@@ -1,0 +1,18 @@
+Najrýchlejší spôsob prekladu je spustiť súbor transform.bat. Treba mať javu v PATH-e a v súboroch transform_pdf.bat a transform_xhtml.bat nastavenú cestu k Saxonu. Cesta ku XEP je rovnaká ako v učebni.
+
+Obsah archívu:
+- obrazky                       -priečinok s obrázkami
+- output                        -priečinok s výstupmi transformácií
+    - slajdy                    -priečinok s výstupom XHTML
+    - output.pdf                -výstup transformácie do pdf
+- _Z3-pilnan.txt                -tento súbor
+- do-fo.xsl                     -transformácia do PDF (FO)
+- do-xhtml.xsl                  -transformácia do XHTML
+- parametre.xml                 -súbor s parametrami transformácií
+- parametre.xsd                 -schéma parametrov
+- prezentacia.xml               -zdrojový súbor ukážkovej prezentácie
+- readme.md                     -readme repozitáru, dokumentácia ako na stránke
+- schema.xsd                    -schéma prezentácie
+- transform_pdf.bat             -dávkový súbor na preklad do PDF
+- transform_xhtml.bat           -dávkový súbor na preklad do XHTML
+- transform.bat                 -pomocný dávkový súbor na rýchle spustenie oboch transformácií

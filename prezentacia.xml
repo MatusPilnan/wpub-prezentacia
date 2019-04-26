@@ -4,32 +4,61 @@
   xsi:noNamespaceSchemaLocation="schema.xsd">
   <info>
     <nazov>Tvorba prezentácie v XML</nazov>
-    <podnadpis>Neviem o tom prakticky nič ale to mi nebráni spraviť o tom prezentáciu 😉</podnadpis>
+    <podnadpis>Ukážková prezentácia na zadanie z WPUB</podnadpis>
     <autor>Matúš Pilňan</autor>
   </info>
   <slajd nadpis="Úvod">
     <text>
-      Dostali sme za úlohu spraviť prezentáciu s pomocou XML a XSLT. Na validáciu XML sme mohli použiť DTD, XML Schema alebo niečo čoho meno si nepamätám.
-      Rozhodol som sa použiť XSD lebo tie zvyšné dve sa javia ako dosť hnoj...
+      Pre potreby vytvorenia jednoduchej prezentácie sme identifikovali 4 najpodstatnejšie druhy slajdov: s textom, s obrázkom, s odrážkami a s číslovaným zoznamom. Štruktúra dokumentu je opísaná pomocou XSD Schema.
     </text>
   </slajd>
-  <slajd nadpis="Čo treba spraviť?">
+  <slajd nadpis="Obsah koreňového elementu prezentacia">
     <zoznam cislovany="false">
-      <polozka-zoznamu>Ukážková prezentácia (XML)</polozka-zoznamu>
-      <polozka-zoznamu>Opis štruktúry (XSD)</polozka-zoznamu>
-      <polozka-zoznamu>Transformácia do XHTML (XSLT)</polozka-zoznamu>
-      <polozka-zoznamu>Transformácia do FO a PDF (XSLT)</polozka-zoznamu>
+      <polozka-zoznamu>Práve jeden element info s informáciami o prezentácii</polozka-zoznamu>
+      <polozka-zoznamu>Aspoň jeden element slajd</polozka-zoznamu>
     </zoznam>
   </slajd>
-  <slajd nadpis="Aj obrázok by som dal...">
-    <obrazok zdroj="D:/Users/MatusPilnan/Pictures/89593.png">...takže tu je Danko Dangl.</obrazok>
+  <slajd nadpis="Obsah elementu info">
+    <zoznam cislovany="false">
+      <polozka-zoznamu>
+        Práve jeden element nazov s názvom prezentácie (napr. na úvodnom slajde),</polozka-zoznamu>
+      <polozka-zoznamu>
+        Najviac jeden element podnadpis - element s podtitulom prezentácie (na úvodný slajd) - nepovinný,</polozka-zoznamu>
+      <polozka-zoznamu>
+        Najviac jeden element autor s menom autora (na úvodný slajd) - nepovinný.</polozka-zoznamu>
+    </zoznam>
   </slajd>
-  <slajd nadpis="A vlastne ešte zoradený zoznam">
+  <slajd nadpis="Druhy slajdov">
     <zoznam cislovany="true">
-      <polozka-zoznamu>Prvý prvok</polozka-zoznamu>
-      <polozka-zoznamu>Druhá položka</polozka-zoznamu>
-      <polozka-zoznamu>Štvrtá položka</polozka-zoznamu>
-      <polozka-zoznamu>To sú ale šprímy čo?</polozka-zoznamu>
+      <polozka-zoznamu>Textový - s obyčajným textom (element text)</polozka-zoznamu>
+      <polozka-zoznamu>Obrázkový - s obrázkom s popisom (element obrazok)</polozka-zoznamu>
+      <polozka-zoznamu>S odrážkami - element zoznam s atribútom cislovany = false</polozka-zoznamu>
+      <polozka-zoznamu>S číslovaným zoznamom - element zoznam s atribútom cislovany = true</polozka-zoznamu>
+    </zoznam>
+  </slajd>
+  <slajd nadpis="Transformácia do XHTML">
+    <text>
+      Na transformáciu do XHTML je použitá verzia 2.0 XSLT, kvôli jednoduchému rozdeleniu výstupu do viacerých súborov. Použitý prekladač teda musí túto verziu podporovať. Pri tvorbe bol použitý Saxon 9HE. Transformáciu spustíme dávkovým súborom transform_xhtml.bat s dvoma parametrami: názov zdrojového súboru (.xml) a názov súboru s transformáciou (.xsl). V skripte treba zmeniť cestu k saxonu (4. riadok), taktiež treba mať javu v PATH-e.
+    </text>
+  </slajd>
+  <slajd nadpis="Výsledok transformácie do XHTML">
+    <obrazok zdroj="D:/Users/MatusPilnan/Desktop/Skola/6.semester/dalsieWpub/prezentacia/obrazky/titulka.JPG">Defaultná titulná strana XHTML prezentácie</obrazok>
+  </slajd>
+  <slajd nadpis="Transformácia do PDF">
+    <text>
+      Pri transformácii do PDF sa používajú dve rôzne rozloženia strán: pre titulný slajd a pre ostatné. Pre generovanie obsahu prezentácie sa používa rovnaká šablóna ako pre číslovaný zoznam. Používajú sa obdobné šablóby ako pri transformácii do XHTML. Transformáciu spustíme dávkovým súborom transform_pdf.bat s dvoma parametrami: názov zdrojového súboru (.xml) a názov súboru s transformáciou (.xsl). V skripte treba zmeniť cestu k saxonu (4. riadok), taktiež treba mať javu v PATH-e.
+    </text>
+  </slajd>
+  <slajd nadpis="Výsledok transformácie do PDF">
+    <obrazok zdroj="D:/Users/MatusPilnan/Desktop/Skola/6.semester/dalsieWpub/prezentacia/obrazky/pdf.JPG">Defaultná titulná strana PDF prezentácie</obrazok>
+  </slajd>
+  <slajd nadpis="Parametre transformácií (parametre.xml)">
+    <zoznam cislovany="false">
+      <polozka-zoznamu>Obsah je booleovská hodnota určujúca, či sa má generovať stránka s obsahom</polozka-zoznamu>
+      <polozka-zoznamu>Generovat-titulny-slajd je booleovská hodnota určujúca, či sa má generovať titulný slajd,</polozka-zoznamu>
+      <polozka-zoznamu>Cislovanie-slajdov je booleovská hodnota určujúca, či má na slajdoch byť číslovanie</polozka-zoznamu>
+      <polozka-zoznamu>Tmava-tema je booleovská hodnota určujúca, či sa má použiť tmavá téma (len pri transformácii do XHTML)</polozka-zoznamu>
+      <polozka-zoznamu>Titulny-slajd je textová hodnota určujúca, čo sa má vygenerovať na titulnom slajde (defaultná hodnota, pri ktorej sa vygeneruje všetko je nazov,podnadpis,oddelovac,autor)</polozka-zoznamu>
     </zoznam>
   </slajd>
 </prezentacia>

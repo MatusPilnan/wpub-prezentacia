@@ -63,7 +63,7 @@
 
   <xsl:template match="slajd">
     <fo:page-sequence master-reference="slajd">
-      <fo:static-content flow-name="xsl-region-before" font="bold 40pt Verdana">
+      <fo:static-content flow-name="xsl-region-before" font="bold 30pt Verdana">
         <fo:block>
           <xsl:value-of select="@nadpis"/>
         </fo:block>
@@ -82,7 +82,7 @@
 
   <xsl:template name="obsah">
     <fo:page-sequence master-reference="slajd">
-      <fo:static-content flow-name="xsl-region-before" font="bold 40pt Verdana">
+      <fo:static-content flow-name="xsl-region-before" font="bold 30pt Verdana">
         <fo:block>
           <xsl:text>Obsah</xsl:text>
         </fo:block>
