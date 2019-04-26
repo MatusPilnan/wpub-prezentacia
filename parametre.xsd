@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
+  <xs:element name="parametre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="obsah" type="xs:boolean"/>
+        <xs:element name="generovat-titulny-slajd" type="xs:boolean"/>
+        <xs:element name="cislovanie-slajdov" type="xs:boolean"/>
+        <xs:element name="tmava-tema" type="xs:boolean"/>
+        <xs:element name="titulny-slajd" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

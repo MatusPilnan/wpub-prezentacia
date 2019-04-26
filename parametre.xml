@@ -1,16 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE parametre [
-  <!ELEMENT parametre (obsah, generovat-titulny-slajd, cislovanie-slajdov, tmava-tema, titulny-slajd)>
-  <!ELEMENT obsah (#PCDATA)>
-  <!ELEMENT generovat-titulny-slajd (#PCDATA)>
-  <!ELEMENT cislovanie-slajdov (#PCDATA)>
-  <!ELEMENT tmava-tema (#PCDATA)>
-  <!ELEMENT titulny-slajd (#PCDATA)>
-]>
-<parametre>
-  <obsah>true</obsah>
-  <generovat-titulny-slajd>true</generovat-titulny-slajd>
-  <cislovanie-slajdov>true</cislovanie-slajdov>
-  <tmava-tema>false</tmava-tema>
-  <titulny-slajd>nazov,podnadpis,oddelovac</titulny-slajd>
+
+<parametre xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="parametre.xsd">
+  <obsah>false</obsah>  <!-- ci sa ma generovat obsah (true/false) -->
+  <generovat-titulny-slajd>true</generovat-titulny-slajd> <!--ci sa ma generovat prvy slajd (true/false) -->
+  <cislovanie-slajdov>true</cislovanie-slajdov> <!--ci sa maju slajdy cislovat (true/false) -->
+  <tmava-tema>false</tmava-tema> <!--ci sa ma pouzit tmava tema (true/false), len pri transformacii do XHTML -->
+  <titulny-slajd>nazov,podnadpis,oddelovac,autor</titulny-slajd> <!-- co vsetko ma byt na titulnom slajde, default: nazov, podnadpis, oddelovac, autor -->
 </parametre>
